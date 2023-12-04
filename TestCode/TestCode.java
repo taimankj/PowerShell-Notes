@@ -66,6 +66,8 @@ public class TestCode {
         System.out.println("variable name reversed is : " + nameReversed);
         
 		System.out.println("END");
+		
+		System.out.println("this is a git test");
 	}
 	
 	public static int power(int base, int exponent) {
