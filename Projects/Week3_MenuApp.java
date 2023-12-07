@@ -2,7 +2,7 @@ package Projects;
 
 import java.util.Scanner;
 
-public class TeamMenuApp {
+public class Week3_MenuApp {
 	
 	public static Scanner s = new Scanner(System.in);
 	
@@ -135,3 +135,4 @@ public class TeamMenuApp {
 	
 	
 }
+

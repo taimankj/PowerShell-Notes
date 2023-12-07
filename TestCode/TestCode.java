@@ -1,5 +1,7 @@
 package TestCode;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TestCode {
@@ -68,6 +70,34 @@ public class TestCode {
 		System.out.println("END");
 		
 		System.out.println("this is a git test");
+		
+		System.out.println("f\sf");
+		System.out.println("f f");
+		
+		System.out.println("------------------");
+		List<String> wordsThree = new ArrayList<String>();
+		wordsThree.add("fire");
+		wordsThree.add("flames");
+		wordsThree.add("four");
+		wordsThree.add("fo");
+		wordsThree.add("fe");
+		
+		String first = wordsThree.remove(0);
+		System.out.println(first);
+		System.out.println(wordsThree.size());
+		String last = wordsThree.remove(wordsThree.size()-1);
+		System.out.println(last);
+		System.out.println("--------------");
+		for (String word : wordsThree) {
+			System.out.println(word);
+		}
+		System.out.println("----------Contains--------");
+		for (int i = 0; i < wordsThree.size(); i++) {
+			if (wordsThree.get(i).contains("fo")) {
+				System.out.println(wordsThree.get(i));
+			}
+		}
+		
 	}
 	
 	public static int power(int base, int exponent) {
