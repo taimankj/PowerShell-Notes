@@ -1,7 +1,9 @@
 package com.promineotech_labs;
 
 import java.util.List;
+import java.util.Set;
 import java.util.ArrayList;
+import java.util.HashSet;
 public class Week4_Lab {
 	
 	public static void main(String[] args) {
@@ -91,7 +93,8 @@ public class Week4_Lab {
 			System.out.println(word);
 		}
 		
-		
+		System.out.println();
+		System.out.println("---Problem 7---");
 		// 7. Write and test a method that takes a list of integers 
 		//			and returns a List<List<Integer>> with the following conditions specified
 		//			for the return value:
@@ -100,21 +103,51 @@ public class Week4_Lab {
 		//		b. The second List contains values from the input list that are divisible by 3
 		//		c. The third containing values divisible by 5, and 
 		//		d. The fourth all numbers from the input List not divisible by 2, 3, or 5
+		List<Integer> numbersProblem7 = new ArrayList<Integer>();
+		numbersProblem7.add(2); //divisible by 2
+		numbersProblem7.add(3); //divisible by 3
+		numbersProblem7.add(7); //not divisible by 2, 3, or 5
+		numbersProblem7.add(5); //divisible by 5
+		numbersProblem7.add(4); //divisible by 2
+		numbersProblem7.add(9); //divisible by 3
+		numbersProblem7.add(25); //divisible by 5
+		numbersProblem7.add(121); //not divisible by 2, 3, or 5
+		numbersProblem7.add(8); //divisible by 2
+		numbersProblem7.add(27); //divisible by 3
+		numbersProblem7.add(35); //divisible by 5
+		numbersProblem7.add(77); //not divisible by 2, 3, or 5
+		List<List<Integer>> problem7 = divisible235(numbersProblem7);
+		for (List<Integer> list : problem7) {
+			for (Integer n : list) {
+				System.out.println(n);
+			}
+			System.out.println("\n---");
+		}
 
-		
+		System.out.println();
+		System.out.println("---Problem 8---");
 		// 8. Write and test a method that takes a list of strings 
 		//			and returns a list of integers that contains the length of each string
-
-
+		List<Integer> wordLength = getWordLength(wordsThree);
+		for (int i = 0; i < wordLength.size(); i++) {
+			System.out.println("The length of word " + wordsThree.get(i) + " is " + wordLength.get(i));
+		}
 		
+		//System.out.println();
+		//System.out.println("---Problem 9---");
 		// 9. Create a set of strings and add 5 values
-
+		Set<String> problemNine = new HashSet<String>();
+		
+		for (int i = 0; i < 6; i++) {
+			problemNine.add(wordsThree.get(i));
+		}
 		
 		
 		// 10. Write and test a method that takes a set of strings and a character 
 		//			and returns a set of strings consisting of all the strings in the
 		// 			input set that start with the character parameter.
-
+		Set<String> startswith = findAllThatStartWith(problemNine, 'a');
+		
 
 		
 		// 11. Write and test a method that takes a set of strings 
@@ -146,6 +179,9 @@ public class Week4_Lab {
 	}
 
 
+	
+
+
 	// Method 15:
 	
 	
@@ -163,15 +199,63 @@ public class Week4_Lab {
 
 
 	// Method 10:
-	
+	public static Set<String> findAllThatStartWith(Set<String> list, char character) {
+		Set<String> results = new HashSet<String>();
+
+		for (String string : list) {
+			if (string.charAt(0) == character) {
+				results.add(string);
+			}
+		}
+
+		return results;
+	}
 
 	
 	// Method 8:
-	
+	public static List<Integer> getWordLength(List<String> list) {
+		List<Integer> wordLength = new ArrayList<Integer>();
+		
+		for (String word : list) {
+			wordLength.add(word.length());
+		}
+		
+		return wordLength;
+	}
 
 	
 	// Method 7:
-	
+	public static List<List<Integer>> divisible235(List<Integer> list) {
+		List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<Integer> list1 = new ArrayList<Integer>();
+		List<Integer> list2 = new ArrayList<Integer>();
+		List<Integer> list3 = new ArrayList<Integer>();
+		List<Integer> list4 = new ArrayList<Integer>();
+		
+		
+		for (int i = 0; i < list.size(); i++) {
+			
+			int value = list.get(i);
+			
+			if (value % 2 == 0) {
+				list1.add(value);
+			} else if (value % 3 == 0) {
+				list2.add(value);
+			} else if (value % 5 == 0) {
+				list3.add(value);
+			} else {
+				list4.add(value);
+			}
+			
+		}
+		
+		result.add(list1);
+		result.add(list2);
+		result.add(list3);
+		result.add(list4);
+		
+		return result;
+	}
 
 	
 	// Method 6:

@@ -94,6 +94,11 @@ public class Week4_Collections {
 		sports.add("Soccer");
 		sports.add("Football");
 		
+		//Where in an Array, you can't just print the array without iterating into it
+		//You can though do this with a List
+		System.out.println(sports); //outputs -> [Wrestling, Soccer, Football]
+		
+		
 		//List.size() - sames as Array.length
 		System.out.println(sports.size());
 		

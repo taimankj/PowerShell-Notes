@@ -1,8 +1,11 @@
 package TestCode;
 
+import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.HashSet;
 
 public class TestCode {
 	
@@ -82,21 +85,38 @@ public class TestCode {
 		wordsThree.add("fo");
 		wordsThree.add("fe");
 		
-		String first = wordsThree.remove(0);
-		System.out.println(first);
-		System.out.println(wordsThree.size());
-		String last = wordsThree.remove(wordsThree.size()-1);
-		System.out.println(last);
-		System.out.println("--------------");
-		for (String word : wordsThree) {
-			System.out.println(word);
+		Set<String> problemNine = new HashSet<String>();
+		
+		for (int i = 0; i < 5; i++) {
+			problemNine.add(wordsThree.get(i));
 		}
-		System.out.println("----------Contains--------");
-		for (int i = 0; i < wordsThree.size(); i++) {
-			if (wordsThree.get(i).contains("fo")) {
-				System.out.println(wordsThree.get(i));
-			}
+		
+		System.out.println("Iterator");
+		System.out.println(problemNine.iterator());
+		
+		String name1 = "rowland";
+		String name2 = "Rowland";
+		
+		System.out.println(name1 == name2);
+		
+		List<Character> alphabet = new ArrayList<>();
+		for(int i = 97; i < (97 + 26); i++){
+		    alphabet.add((char)i); //(char)i is type casting by turning the integer 'i'
+		} //into a character at the Unicode code point of that character's position
+		System.out.println(alphabet);
+		
+		System.out.println("-----Linked List-----");
+		List<String> movieLine = new LinkedList<>();
+		movieLine.add("Keoni");
+		movieLine.add("Tiffani");
+		movieLine.add("Ahu");
+		movieLine.add("Napu");
+		movieLine.add("Taj");
+		movieLine.add("Theisen");
+		for (String personInLine : movieLine) {
+			System.out.println(personInLine);
 		}
+		
 		
 	}
 	
