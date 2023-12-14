@@ -192,6 +192,7 @@ public class Week4_Collections {
 		racerPlacements.put(1, "Tommy");
 		racerPlacements.put(2, "Sally");
 		racerPlacements.put(3, "John");
+		System.out.println(racerPlacements);
 		
 		Map<String, String> dictionary = new HashMap<String, String>(); //First String is word and second String is definition
 		dictionary.put("Augment", "make (something) greater by adding to it; increase");
@@ -220,6 +221,7 @@ public class Week4_Collections {
 		for (String racer : racers) {
 			System.out.println(racer);
 		}
+		
 	}
 
 }
