@@ -117,6 +117,11 @@ public class TestCode {
 			System.out.println(personInLine);
 		}
 		
+		for (int i = 0; i < 54; i++) {
+			for (int j = 2; j < 15; j++) {
+				System.out.println(j);
+			}
+		}
 		
 	}
 	

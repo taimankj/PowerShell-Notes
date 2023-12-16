@@ -1,8 +1,10 @@
 package com.promineotech;
 
+
 import Classes.*;
 import java.util.*;
 import java.io.*;
+import Interfaces.*;
 
 public class Week5_ObjectOrientedProgramming {
 	
@@ -99,6 +101,17 @@ public class Week5_ObjectOrientedProgramming {
 		}
 		
 		System.out.println("After second try-catch block");
+		
+		
+		System.out.println();
+		System.out.println("III:"
+				+ "\n----------------------------------------\n");
+		//Interfaces
+		Logger logger = new ConsoleLogger();
+		logger.info("Hello");
+		logger.warning("This is a warning");
+		logger.error("Oops, this is an error!");
+		logger.fatal("Fatal error");
 	}
 	
 	//throws keyword with a given Exception class, handles exceptions in it's own try-catch block
