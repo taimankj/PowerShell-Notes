@@ -177,7 +177,7 @@ public class Week4_Collections {
 		//Set.remove(value) - removes the specified element from this set if it is present
 		states.remove("Arkansas");
 		System.out.println(states.contains("Arkansas"));
-		
+
 		System.out.println();
 		System.out.println("III(B):");
 		//Map

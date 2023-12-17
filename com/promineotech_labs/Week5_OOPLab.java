@@ -1,8 +1,9 @@
 package com.promineotech_labs;
 
+import java.util.*;
 import LabClasses.*;
 
-public class Week5_Lab {
+public class Week5_OOPLab {
 
 	// This Lab will give you a basic look at creating an Object Oriented Card Game.  
 	//		The idea here is to prepare you for your Week 6 Unit Final Project.
@@ -82,11 +83,11 @@ public class Week5_Lab {
 		//		Add a shuffle method within the Deck Class
 		System.out.println("\nQuestion 3: Deck shuffle() method");
 		// Test your method here
-		
+		d1.shuffle();
 		
 		
 		// Call the describe method on the newly shuffled deck.
-
+		d1.describe();
 		
 		
 		
@@ -94,8 +95,11 @@ public class Week5_Lab {
 		//		Add a draw method within the Deck Class
 		System.out.println("\nQuestion 4: Deck draw() method");
 		// Test your method here
-		
-		
+		List<Card> hand = new ArrayList<Card>();
+		for (int i = 0; i < 5; i++) {
+			hand.add(d1.draw());
+			hand.get(i).describe();
+		}
 		
 		
 		
@@ -112,9 +116,14 @@ public class Week5_Lab {
 		// 			and deal the cards out to the "players" in the Map.
 		System.out.println("\nQuestion 5: Create Game");
 		// Call your method here
-
-		
-		
+		Map<String, List<Card>> newGame = fiveCardPoker(3);
+		Set<String> newGamePlayers = newGame.keySet();
+		for (String player : newGamePlayers) {
+			System.out.println(player + ":");
+			for (int i = 0; i < 5; i++) {
+				newGame.get(player).get(i).describe();
+			}
+		}
 		
 		
 		
@@ -123,7 +132,23 @@ public class Week5_Lab {
 	} 
 	
 	// Method 5:
-	
+	public static Map<String, List<Card>> fiveCardPoker(int nPlayers) {
+		Map<String, List<Card>> players = new HashMap<String, List<Card>>();
+		Deck deck = new Deck();
+		deck.shuffle();
+		
+		while (nPlayers > 0) {
+			players.put("Player " + nPlayers, new ArrayList<Card>());
+			for (int i = 0; i < 5; i++) {
+				players.get("Player " + nPlayers).add(deck.draw());
+			}
+			nPlayers--;
+		}
+		
+		deck.empty();
+		
+		return players;
+	}
 	
 	
 	

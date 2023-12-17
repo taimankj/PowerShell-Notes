@@ -2,6 +2,8 @@ package LabClasses;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 
 public class Deck {
 	
@@ -20,19 +22,33 @@ public class Deck {
 	}
 	
 	public void describe() {
-		int i = 14;
-		int j = 0;
 		for (Card card : this.cards) {
-			if (i % 14 == 0 && card.getName().equals("Two")) {
-				System.out.println(this.suits[j] + ": ");
-				i += 14;
-				j++;
-			}
 			card.describe();
-			if (card.getValue() == 14) {
-				System.out.println();
-			}
 		}
+	}
+	
+	public void shuffle() {
+		Set<Card> cards = new HashSet<Card>();
+		
+		for (Card card : this.cards) {
+			cards.add(card);
+		}
+		
+		this.cards.clear();
+		
+		for (Card card : cards) {
+			this.cards.add(card);
+		}		
+	}
+	
+	public Card draw() {
+		Card result = cards.get(cards.size() - 1);
+		cards.remove(cards.size() - 1);
+		return result;		
+	}
+	
+	public void empty() {
+		this.cards.clear();
 	}
 	
 }
