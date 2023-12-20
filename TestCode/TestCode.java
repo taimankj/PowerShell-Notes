@@ -1,11 +1,6 @@
 package TestCode;
 
-import java.util.LinkedList;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 public class TestCode {
 	
@@ -69,8 +64,6 @@ public class TestCode {
         String nameReversed = reverseStrBldr(name);
         System.out.println(name);
         System.out.println("variable name reversed is : " + nameReversed);
-        
-		System.out.println("END");
 		
 		System.out.println("this is a git test");
 		
@@ -122,6 +115,32 @@ public class TestCode {
 				System.out.println(j);
 			}
 		}
+        
+		String one = "1";
+		System.out.println(String.valueOf(1).equals(one));
+		
+		
+		Map<Integer, String[]> myMap = new HashMap<Integer, String[]>();
+		
+		String[] array = {" ", " ", " "};
+		myMap.put(0, array);
+		myMap.put(1, array);
+		myMap.put(2, array);
+		Set<Integer> arrayKeys = myMap.keySet();
+		int j = 0;
+		for (int i : arrayKeys) {
+			System.out.println(myMap.get(i)[j]);
+			System.out.println(myMap.get(i)[j+1]);
+			System.out.println(myMap.get(i)[j+2]);
+		}
+		
+		myMap.get(0)[0] = "X";
+		for (String word : myMap.get(0)) {
+			System.out.println(word);
+		}
+		
+		
+		System.out.println("--------------------END--------------------");
 		
 	}
 	
